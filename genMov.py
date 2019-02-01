@@ -35,10 +35,17 @@ def ImageMagick(item):
 	"""
 	file 리스트를 받으면 proxy경로에 프록시 이미지를 생성한다.
 	"""
-	for i in item:
+#	if not os.path.exists(root):
+#		return "파일이 존재하지 않습니다."
+#	if not os.path.isfile(root):
+#	 return "파일 형태가 아닙니다."
+#	if not os.path.exists("/usr/bin/convert"):
+#		return "ImageMagick이 설치되지 않았습니다."
+
+	for src in item:
+		p, f = os.path.split(src)
+		basename, ext =
 		cmd = ["convert %s/%s/%s/%s %s/%s/%s/%s" % (i, i.replace(".exr",".jpg"))]
-		print cmd
-		#os.system(cmd)
 			
 if __name__ == "__main__":
 	root = "/project/circle/in/aces_exr"
