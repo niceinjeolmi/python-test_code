@@ -1,0 +1,10 @@
+import nuke
+tail = nuke.selectedNode()
+reformat = nuke.nodes.Reformat()
+addtimecode=nuke.nodes.AddTimeCode()
+slate=nuke.nodes.slate()
+write = nuke.nodes.Write()
+reformat.setInput(0,tail)
+addtimecode.setInput(0,reformat)
+slate.setInput(0,addtimecode)
+write.setInput(0,slate )
